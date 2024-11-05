@@ -16,6 +16,8 @@
         - video
         - compiled programs
 
+### plain text files
+
 ### bits 0 and 1
 
 - 1 bit can represent 2 states: 0 or 1
