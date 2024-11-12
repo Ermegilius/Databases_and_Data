@@ -200,3 +200,10 @@ select * from employee where firstName like 'Mary\_Ann';-- \ makes it symbol "_"
 insert into employee (employeeId, firstName,lastName,department,salary)
 values (11, "Mary-Lou Ann", "Smith", "admin",7500);
 select * from employee where firstName like 'Mary%Ann';--similar idea
+
+select * from employee firstName like 'Mary'; --don't do this for a full match, it's very slow
+select * from employee where firstName ='Mary'; --it's much faster
+
+
+--INSERT values
+update employee set department='admin where wmployeeID='3';
