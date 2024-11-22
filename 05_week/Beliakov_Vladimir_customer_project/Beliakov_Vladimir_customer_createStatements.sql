@@ -16,4 +16,4 @@ insert into customer values(1, 'Sami', 'Järvi', 'Class 2', 'Salmiakki');
 
 drop user if exists 'michael'@'localhost';
 create user 'michael'@'localhost' identified by 'BLLTlGxV';
-grant all privileges on customerdb.* to 'michael'@'localhost'
+grant all privileges on customerdb.* to 'michael'@'localhost';
