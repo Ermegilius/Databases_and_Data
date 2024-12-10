@@ -12,15 +12,13 @@ use employeedb;
 
 select round(avg(salary),2) from employee;
 
--- 
--- 
--- 
--- 
--- 
-
+select @avg:=round(avg(salary),2) from employee;
+select @avg;
+select * from information_schema.USER_VARIABLES order by VARIABLE_NAME;
 
 update employee set salary=@avg where salary<@avg;
 delete from employee where salary=@avg;
+
 
 --select...into
 select round(avg(salary),2) into @a from employee;

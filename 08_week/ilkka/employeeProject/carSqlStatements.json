@@ -1,0 +1,16 @@
+{
+    "getAll":[
+        "select carId, model,price from car"
+    ],
+    "getOne":[
+        "select carId, model,price from car where carId=?"
+    ],
+    "insert":[
+        "insert into car (carId, model, price) values(?,?,?)"
+    ],
+    "update":[
+        "update car set model=?, price=? where carId=?"
+    ],
+    "remove":["delete from car where carId=?"],
+    "primary_key":"carId"
+}

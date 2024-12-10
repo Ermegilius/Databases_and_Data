@@ -1,0 +1,7 @@
+{
+    "host":"localhost",
+    "port":3306,
+    "user":"driver",
+    "password":"GTX999",
+    "database":"cardb"
+}
