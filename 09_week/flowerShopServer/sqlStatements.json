@@ -1,0 +1,51 @@
+{
+    "allFarmers":[
+        "select farmerId, farmerName, farmerLocation from farmer"
+    ],
+    "allFlowers":[
+        "select flowerId, flowerName, flowerPrice from flower"
+    ],
+
+
+    "getFlower":[
+        "select flowerId, flowerName, flowerPrice from flower", 
+        "where flowerName = ?"
+    ],
+    "getFlowerId":[
+        "select flowerId from flower", 
+        "where flowerName = ?"
+    ],
+    "getFlowersInOrder":[
+        "select flowerId, flowerName, flowerPrice, flowerAmount, flowerPrice*flowerAmount as total",
+        "from flower",
+        "natural join customerOrder_has_flower",
+        "natural join customerOrder",
+        "where customerOrder.customerOrderId = ?"
+    ],
+    "getCustomerOrderById":[
+        "select customerOrderId, customerfirstname, customerlastname, customerOrderDate",
+        "from customerOrder",
+        "natural join customer",
+        "where customerOrderId = ?"
+    ],
+
+
+    "nextCustomerId":[
+        "select coalesce(max(customerId),0)+1 as nextId from customer"
+    ],
+    "nextCustomerOrderId":[
+        "select coalesce(max(customerOrderId),0)+1 as nextId from customerOrder"
+    ],
+
+
+    "insertCustomer":[
+        "insert into customer(customerId, customerfirstname, customerlastname, customerAddress) values (?,?,?,?)"
+    ],
+    "insertCustomerOrder":[
+        "insert into customerOrder(customerOrderId, customerId, customerOrderDate) values (?,?,?)"
+    ],
+    "insertFlowerToCustomerOrder":[
+        "insert into customerOrder_has_flower (customerOrderId, flowerId, flowerAmount)",
+        "values (?,?,?)"
+    ]
+}
